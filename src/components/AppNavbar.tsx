@@ -65,7 +65,7 @@ export default function AppNavbar({ onToggleSidebar, sidebarCollapsed }: AppNavb
       </button>
 
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
+      <Link href="/dashboard" className="flex items-center gap-2 flex-shrink-0 group">
         <div
           className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"
           style={{ background: 'var(--primary)', border: '2px solid var(--border)', boxShadow: '2px 2px 0px var(--border)' }}

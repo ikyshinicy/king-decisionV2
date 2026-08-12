@@ -16,7 +16,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
       {/* Body: sidebar + main content */}
       <div className="flex flex-1 min-h-0 overflow-hidden">
-        <AppSidebar collapsed={sidebarCollapsed} onToggle={toggleSidebar} />
+        <AppSidebar collapsed={sidebarCollapsed} />
         <main className="flex-1 min-w-0 overflow-y-auto" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>{children}</main>
       </div>
     </div>
