@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Nunito:wght@700;800;900&display=swap');
-
 :root {
   --background: #faf6ee;
   --foreground: #111111;
@@ -21,7 +19,8 @@
   --input: #f0ead8;
   --ring: #f5c800;
   --radius: 12px;
-  --font-sans: var(--font-plus-jakarta-sans), 'Nunito', sans-serif;
+  --font-sans: var(--font-manrope), 'Manrope', sans-serif;
+  --font-display: var(--font-fraunces), 'Fraunces', serif;
 
   --gemini: #1a73e8;
   --gemini-dark: #1558b0;
@@ -232,13 +231,15 @@
 
 @layer utilities {
   .font-royal {
-    font-family: 'Bangers', 'Nunito', sans-serif;
-    letter-spacing: 0.04em;
+    font-family: var(--font-display), 'Fraunces', serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .font-comic {
-    font-family: 'Bangers', sans-serif;
-    letter-spacing: 0.05em;
+    font-family: var(--font-display), 'Fraunces', serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .text-gemini { color: var(--gemini); }
