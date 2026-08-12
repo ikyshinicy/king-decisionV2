@@ -45,7 +45,8 @@ module.exports = {
         '2xl': 'calc(var(--radius) + 8px)',
       },
       fontFamily: {
-        sans: ['var(--font-plus-jakarta-sans)', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'serif'],
       },
     },
   },
