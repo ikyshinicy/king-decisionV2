@@ -15,6 +15,8 @@ interface TranscriptPanelProps {
   phase: SessionPhase;
   pinnedIds?: string[];
   onTogglePin?: (id: string) => void;
+  isMuted?: boolean;
+  onToggleMute?: () => void;
 }
 
 const SENDER_CONFIG = {
@@ -33,6 +35,8 @@ export default function TranscriptPanel({
   phase,
   pinnedIds = [],
   onTogglePin,
+  isMuted = false,
+  onToggleMute,
 }: TranscriptPanelProps) {
   const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -91,6 +95,21 @@ export default function TranscriptPanel({
             >
               <Icon name="MagnifyingGlassIcon" size={12} className="text-current" />
             </button>
+            {/* Mute / Unmute TTS */}
+            {onToggleMute && (
+              <button
+                onClick={onToggleMute}
+                className="w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-150 cursor-pointer"
+                style={{
+                  background: isMuted ? '#f0ead8' : '#111111',
+                  border: '1.5px solid #111111',
+                  color: isMuted ? '#555' : '#f5c800',
+                }}
+                title={isMuted ? 'Aktifkan Suara' : 'Matikan Suara'}
+              >
+                <span style={{ fontSize: 12 }}>{isMuted ? '🔇' : '🔊'}</span>
+              </button>
+            )}
             {/* Pin filter */}
             <button
               onClick={() => setShowPinnedOnly((v) => !v)}

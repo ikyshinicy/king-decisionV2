@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import TranscriptPanel from './TranscriptPanel';
 import Composer from './Composer';
@@ -429,36 +428,6 @@ export default function CouncilSessionScreen() {
         </div>
       )}
 
-      {/* Profile Button */}
-      <Link
-        href="/profile"
-        className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-150 hover:scale-110"
-        style={{ background: '#f5c800', border: '2px solid #111111', boxShadow: '2px 2px 0px #111111', color: '#111111' }}
-        title="Profil Raja"
-      >
-        ♛
-      </Link>
-
-      {/* Mute / Unmute TTS Button */}
-      <button
-        onClick={() => {
-          if (!isMuted && typeof window !== 'undefined' && window.speechSynthesis) {
-            window.speechSynthesis.cancel();
-          }
-          setIsMuted((v) => !v);
-        }}
-        className="absolute top-4 right-16 z-50 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-150 hover:scale-110"
-        style={{
-          background: isMuted ? '#444' : '#1a1a2e',
-          border: '2px solid #111111',
-          boxShadow: '2px 2px 0px #111111',
-          color: isMuted ? '#888' : '#f5c800',
-        }}
-        title={isMuted ? 'Aktifkan Suara' : 'Matikan Suara'}
-      >
-        {isMuted ? '🔇' : '🔊'}
-      </button>
-
       {/* Council Scene */}
       <div className="flex-1 relative overflow-hidden">
         <CouncilScene ministerStates={ministerStates} speechBubbles={speechBubbles} phase={phase} />
@@ -489,6 +458,13 @@ export default function CouncilSessionScreen() {
         phase={phase}
         pinnedIds={pinnedIds}
         onTogglePin={handleTogglePin}
+        isMuted={isMuted}
+        onToggleMute={() => {
+          if (!isMuted && typeof window !== 'undefined' && window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+          }
+          setIsMuted((v) => !v);
+        }}
       />
     </div>
   );
