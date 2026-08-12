@@ -137,10 +137,10 @@ function ProfileFormFields({
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Theme Selector */}
       {showTheme && (
-        <div className="space-y-3">
+        <div className="space-y-2">
           <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
             {t.themeDisplay}
           </label>
@@ -154,7 +154,7 @@ function ProfileFormFields({
                   key={opt.value}
                   onClick={() => setTheme(opt.value)}
                   title={label}
-                  className="flex-1 flex flex-col items-center gap-1.5 py-3 px-1 rounded-xl transition-all duration-150 cursor-pointer"
+                  className="flex-1 flex flex-col items-center gap-1 py-2 px-1 rounded-xl transition-all duration-150 cursor-pointer"
                   style={{
                     background: isActive ? opt.bg : 'var(--muted)',
                     border: `2px solid ${isActive ? opt.border : 'var(--border)'}`,
@@ -179,7 +179,7 @@ function ProfileFormFields({
       {showTheme && <div style={{ borderTop: '2px dashed var(--muted)' }} />}
 
       {/* Full Name */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
           {t.fullName}
         </label>
@@ -188,7 +188,7 @@ function ProfileFormFields({
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           placeholder={t.fullNamePlaceholder}
-          className="w-full px-4 py-3 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
+          className="w-full px-4 py-2 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
           style={inputStyle}
           onFocus={inputFocus}
           onBlur={inputBlur}
@@ -196,7 +196,7 @@ function ProfileFormFields({
       </div>
 
       {/* Username */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
           {t.username}
         </label>
@@ -207,7 +207,7 @@ function ProfileFormFields({
             value={username}
             onChange={(e) => setUsername(e.target.value.replace(/\s/g, ''))}
             placeholder={t.usernamePlaceholder}
-            className="w-full pl-8 pr-4 py-3 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
+            className="w-full pl-8 pr-4 py-2 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
             style={inputStyle}
             onFocus={inputFocus}
             onBlur={inputBlur}
@@ -216,7 +216,7 @@ function ProfileFormFields({
       </div>
 
       {/* Email */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
           {t.email}
         </label>
@@ -229,7 +229,7 @@ function ProfileFormFields({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t.emailPlaceholder}
-            className="w-full pl-10 pr-4 py-3 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
+            className="w-full pl-10 pr-4 py-2 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
             style={inputStyle}
             onFocus={inputFocus}
             onBlur={inputBlur}
@@ -238,7 +238,7 @@ function ProfileFormFields({
       </div>
 
       {/* Phone */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
           {t.phone}
         </label>
@@ -251,7 +251,7 @@ function ProfileFormFields({
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder={t.phonePlaceholder}
-            className="w-full pl-10 pr-4 py-3 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
+            className="w-full pl-10 pr-4 py-2 rounded-xl text-sm font-semibold outline-none transition-all duration-150"
             style={inputStyle}
             onFocus={inputFocus}
             onBlur={inputBlur}
@@ -260,7 +260,7 @@ function ProfileFormFields({
       </div>
 
       {/* Gender */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
           {t.genderTitle}
         </label>
@@ -273,7 +273,7 @@ function ProfileFormFields({
                 key={opt.value}
                 onClick={() => setGender(opt.value)}
                 title={label}
-                className="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl transition-all duration-150 cursor-pointer"
+                className="flex-1 flex flex-col items-center gap-1 py-2 rounded-xl transition-all duration-150 cursor-pointer"
                 style={{
                   background: isSelected ? 'var(--primary)' : 'var(--input)',
                   border: `2px solid var(--border)`,
@@ -290,7 +290,7 @@ function ProfileFormFields({
       </div>
 
       {/* Royal Title Dropdown */}
-      <div className="space-y-2" ref={dropdownRef}>
+      <div className="space-y-1.5" ref={dropdownRef}>
         <label className="text-[11px] font-extrabold tracking-[0.1em] uppercase" style={{ color: 'var(--muted-foreground)' }}>
           {t.royalTitle}
         </label>
@@ -298,7 +298,7 @@ function ProfileFormFields({
           <button
             type="button"
             onClick={() => { setDropdownOpen((v) => !v); setShowCustomInput(false); setCustomInput(''); }}
-            className="w-full px-4 py-3 rounded-xl text-sm font-semibold outline-none transition-all duration-150 flex items-center justify-between cursor-pointer"
+            className="w-full px-4 py-2 rounded-xl text-sm font-semibold outline-none transition-all duration-150 flex items-center justify-between cursor-pointer"
             style={{
               background: 'var(--input)',
               border: dropdownOpen ? '2px solid var(--secondary)' : '2px solid var(--border)',
@@ -458,11 +458,11 @@ function OnboardingProfile() {
   if (step === 0) {
     return (
       <div
-        className="min-h-screen flex flex-col items-center justify-center px-6 halftone-bg"
+        className="h-screen flex flex-col items-center justify-center px-6 halftone-bg overflow-y-auto"
         style={{ background: 'var(--background)' }}
       >
         <div
-          className="w-full max-w-sm rounded-3xl overflow-hidden text-center"
+          className="w-full max-w-sm rounded-3xl overflow-hidden text-center flex-shrink-0"
           style={{
             background: 'var(--card)',
             border: '3px solid var(--border)',
@@ -536,11 +536,11 @@ function OnboardingProfile() {
     const previewName = fullName.trim() || username.trim() || '...';
     return (
       <div
-        className="min-h-screen flex flex-col items-center justify-center px-6 halftone-bg"
+        className="h-screen flex flex-col items-center justify-center px-6 halftone-bg overflow-y-auto"
         style={{ background: 'var(--background)' }}
       >
         <div
-          className="w-full max-w-sm rounded-3xl overflow-hidden text-center"
+          className="w-full max-w-sm rounded-3xl overflow-hidden text-center flex-shrink-0"
           style={{
             background: 'var(--card)',
             border: '3px solid var(--border)',
@@ -602,11 +602,11 @@ function OnboardingProfile() {
   // Step 1: Form
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-start px-4 py-10 halftone-bg overflow-y-auto"
+      className="h-screen flex flex-col items-center justify-start px-4 py-6 halftone-bg overflow-y-auto"
       style={{ background: 'var(--background)' }}
     >
       {/* Progress bar at top */}
-      <div className="w-full max-w-md mb-6">
+      <div className="w-full max-w-md mb-4 flex-shrink-0">
         <div className="flex items-center justify-between mb-2">
           <span className="text-[10px] font-extrabold uppercase tracking-widest" style={{ color: 'var(--muted-foreground)' }}>
             {t.step2of3}
@@ -631,7 +631,7 @@ function OnboardingProfile() {
 
       {/* Card */}
       <div
-        className="w-full max-w-md rounded-3xl overflow-hidden relative z-10"
+        className="w-full max-w-md rounded-3xl overflow-hidden relative z-10 flex-shrink-0"
         style={{
           background: 'var(--card)',
           border: '3px solid var(--border)',
@@ -640,36 +640,36 @@ function OnboardingProfile() {
       >
         {/* Header — distinct onboarding style */}
         <div
-          className="px-8 pt-8 pb-6 text-center relative"
+          className="px-6 pt-5 pb-4 text-center relative"
           style={{
             background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
             borderBottom: '3px solid var(--border)',
           }}
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-3 text-[9px] font-extrabold uppercase tracking-widest"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-2 text-[9px] font-extrabold uppercase tracking-widest"
             style={{ background: 'rgba(0,0,0,0.2)', color: 'var(--primary-foreground)', border: '1px solid rgba(255,255,255,0.3)' }}
           >
             {t.setupInitial}
           </div>
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-center mb-2">
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center"
+              className="w-10 h-10 rounded-2xl flex items-center justify-center"
               style={{ background: 'var(--card)', border: '2px solid var(--border)', boxShadow: '3px 3px 0px var(--border)' }}
             >
-              <span style={{ fontSize: 28 }}>♛</span>
+              <span style={{ fontSize: 20 }}>♛</span>
             </div>
           </div>
-          <h1 className="font-comic text-2xl font-bold tracking-wide" style={{ color: 'var(--primary-foreground)' }}>
+          <h1 className="font-comic text-xl font-bold tracking-wide" style={{ color: 'var(--primary-foreground)' }}>
             {t.introduceYourself}
           </h1>
-          <p className="text-[11px] font-semibold mt-1.5 leading-relaxed" style={{ color: 'var(--primary-foreground)', opacity: 0.8 }}>
+          <p className="text-[11px] font-semibold mt-1 leading-relaxed" style={{ color: 'var(--primary-foreground)', opacity: 0.8 }}>
             {t.introduceDesc}
           </p>
         </div>
 
         {/* Form */}
-        <div className="px-8 py-7">
+        <div className="px-6 py-5">
           <ProfileFormFields
             fullName={fullName} setFullName={setFullName}
             username={username} setUsername={setUsername}
@@ -733,7 +733,7 @@ function RegularProfile() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-start px-4 py-12 relative overflow-y-auto halftone-bg"
+      className="h-screen flex flex-col items-center justify-start px-4 py-8 relative overflow-y-auto halftone-bg"
       style={{ background: 'var(--background)' }}
     >
       {/* Back button */}
